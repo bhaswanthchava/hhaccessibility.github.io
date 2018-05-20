@@ -398,6 +398,10 @@ This is where to put SCSS for the location report that shows a map.
 	}
 }
 
+@media screen and (min-width: 991px) {
+
+}
+
 @media screen and (max-width: 991px) {
 	html > body .location-report > div.map-and-box {
 		position: static;

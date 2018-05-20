@@ -50,7 +50,11 @@
 				@include('pages.location_report.personal_not_available', ['location_id' => $location->id])
 			@elseif ($num_ratings === 0)
 				<div class="title-bar">
-					<h3>{{ $location->name }}</h3>
+					<h3
+					@if (strlen($location->name) > 31)
+						class="long-31"
+					@endif
+					>{{ $location->name }}</h3>
 				</div>
 				<div class="questions">
 					<div class="question-category">
