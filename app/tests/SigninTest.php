@@ -9,6 +9,7 @@ class SigninApiTest extends TestCase
      */
     public function testPost()
     {
+        Session::start();
         $data = ['email' => 'test', 'password' => 'password'];
         $response = $this->post('/signin', $data);
         $this->assertEquals(302, $response->getStatusCode());
@@ -157,7 +158,7 @@ class SigninApiTest extends TestCase
 
     public function testSuccessfulSignIn()
     {
-        $this->flushSession();
+        Session::start();
         $data = ['email' => 'josh.greig2@gmail.com', 'password' => 'password'];
         $response = $this->post('/signin', $data);
         $this->assertEquals(302, $response->getStatusCode());
@@ -174,6 +175,7 @@ class SigninApiTest extends TestCase
 
     public function testSignout()
     {
+        Session::start();
         $response = $this->get('/signout');
         $this->assertEquals(302, $response->getStatusCode());
     }
