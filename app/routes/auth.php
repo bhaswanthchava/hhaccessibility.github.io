@@ -11,8 +11,8 @@ Route::group(['prefix' => 'signup'], function () {
     Route::get('/confirmEmail/{user_email}/{email_verification_token}', 'SignUpController@confirmEmail');
 });
 
-Route::get('socialauth/auth/{provider}', 'SocialAuthController@getSocialLogin');
-Route::get('socialauth/auth', 'SocialAuthController@getSocialLoginCallBack');
+Route::get('social_auth/auth/{provider}', 'SocialAuthController@getSocialLogin');
+Route::get('social_auth/auth', 'SocialAuthController@getSocialLoginCallBack');
 
 Route::get('fbauth/{auth?}', array('as'=>'facebookAuth', 'uses'=>'SocialAuthController@getFacebookLogin'));
 
